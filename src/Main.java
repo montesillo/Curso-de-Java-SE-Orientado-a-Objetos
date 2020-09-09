@@ -5,17 +5,13 @@ public class Main {
         int i = 0;
         int b = 1;
         b = i;
-        Patient patient = new Patient("Hiram", "email@gmail.com");
-        /*Doctor myDoctor = new Doctor();
-        myDoctor.name = "Alejandro Rodríguez";
-        myDoctor.showName();
-        myDoctor.showId();
 
+        Doctor myDoctor = new Doctor("Hiram", "Programador");
+        System.out.println(myDoctor.name);
+        System.out.println(myDoctor.speciality);
+        //showMenu();
 
-        Doctor.id++;
+        Patient patient = new Patient("Alejandra", "alejandra@gmail.com");
 
-        Doctor MyDoctorAnn = new Doctor();
-        myDoctor.showId();`*/
-        showMenu();
     }
 }
