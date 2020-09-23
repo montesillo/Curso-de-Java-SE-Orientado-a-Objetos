@@ -12,6 +12,9 @@ public class Main {
         //showMenu();
 
         Patient patient = new Patient("Alejandra", "alejandra@gmail.com");
+        patient.setWeight(54.5);
+        System.out.println(patient.getWeight());
 
+        patient.setPhoneNumber("1243354556434");
     }
 }
