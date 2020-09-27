@@ -1,31 +1,23 @@
-public class Patient {
+package model;
+
+public class User {
+    private int id;
     private String name;
     private String email;
     private String address;
     private String phoneNumber;
-    private String birthday;
-    private double weight;
-    private double height;
-    private String blood;
 
-    Patient(String name, String email){
+    public User(String name, String email) {
         this.name = name;
         this.email = email;
     }
-    public void setWeight(double weight){
-        this.weight = weight;
-    }
-    //54.5 kg //String
-    public String getWeight(){
-        return this.weight + " Kg.";
+
+    public int getId() {
+        return id;
     }
 
-    public String getHeight() {
-        return height + "Mts.";
-    }
-
-    public void setHeight(double height) {
-        this.height = height;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -64,20 +56,9 @@ public class Patient {
         }
     }
 
-    public String getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
-    }
-
-
-    public String getBlood() {
-        return blood;
-    }
-
-    public void setBlood(String blood) {
-        this.blood = blood;
+    @Override
+    public String toString() {
+        return "model.User: " + name + ". Email: " + email +
+                "\nAddreess: " + address + " Phone: " + phoneNumber;
     }
 }

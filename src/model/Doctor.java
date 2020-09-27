@@ -1,39 +1,39 @@
+package model;
+
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Doctor {
-    static int id = 0;//Autoincrement
-    private String name;
-    private String email;
+public class Doctor extends User{
     private String speciality;
 
-
-
-    Doctor(){
-        System.out.println("Construyendo el Objeto Doctor");
-
-    }
-
-    Doctor(String name, String speciality){
-        System.out.println("El nombre del Doctor asignado es: " + name);
-        id++;
-        this.name = name;
+    public Doctor(String name, String email){
+        super(name, email);
+        System.out.println("El nombre del model.Doctor asignado es: " + name);
         this.speciality = speciality;
     }
-    //Comportamientos
-    public void showName(){
-        System.out.println(name);
+
+    public String getSpeciality() {
+        return speciality;
     }
-    public void showId(){
-        System.out.println("ID Doctor: " + id);
+
+    public void setSpeciality(String speciality) {
+        this.speciality = speciality;
     }
+
     ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
-    public void addAcailableAppointment(Date date, String time){
+    public void addAvailableAppointment(Date date, String time){
         availableAppointments.add(new AvailableAppointment(date, time));
     }
     public ArrayList<AvailableAppointment> getAvailableAppointments(){
         return availableAppointments;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\nSpeciality: " + speciality +
+                "\nAvailable: " + availableAppointments.toString();
+    }
+
     public static class AvailableAppointment{
         private int id_availableAppointment;
         private Date date;
@@ -58,7 +58,10 @@ public class Doctor {
             this.time = time;
         }
 
-
-
+        @Override
+        public String toString() {
+            return "Available Appointments \nDate: " + date +
+                    "\nTime: " + time;
+        }
     }
 }
