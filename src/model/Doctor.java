@@ -54,11 +54,11 @@ public class Doctor extends User{
             }
             this.time = time;
         }
-        public Date getDate() {
+        public Date getDate(String DATE) {
             return date;
         }
-        public String getDate(String Date) {
-            return format.format(Date);
+        public String getDate() {
+            return format.format(date);
         }
         public void setDate(Date sate) {
             this.date = sate;
